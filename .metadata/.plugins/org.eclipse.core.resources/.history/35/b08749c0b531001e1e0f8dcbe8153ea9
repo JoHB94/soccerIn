@@ -1,0 +1,12 @@
+package team.dao;
+
+import conn.DBConnect;
+
+public class TeamDaoImpl {
+	
+	private DBConnect db;
+
+	public TeamDaoImpl() {
+		db = DBConnect.getInstance();
+	}
+}

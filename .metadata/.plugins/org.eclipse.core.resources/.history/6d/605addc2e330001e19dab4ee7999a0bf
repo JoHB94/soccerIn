@@ -1,0 +1,26 @@
+package player.model;
+
+import java.sql.Date;
+
+public class Player {
+
+	private int p_num;
+	private String id;
+	private String pwd;
+	private String p_name;
+	private String p_email;
+	private String p_addr;
+	private Date birth;
+	private int height;
+	private int weight;
+	private int speed;
+	private String position;
+	private String p_intro;
+	private String p_profile;
+	private int on_market = 0;
+	
+	
+
+
+
+}

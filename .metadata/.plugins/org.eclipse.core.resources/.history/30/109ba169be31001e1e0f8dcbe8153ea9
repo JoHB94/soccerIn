@@ -1,0 +1,18 @@
+package message.service;
+
+import java.util.ArrayList;
+
+import message.model.Message;
+
+public interface MsgService {
+	
+	boolean doScout(Message m);
+	
+	boolean doApply(Message m);
+	
+	ArrayList<Message> checkScout(String id);
+	
+	ArrayList<Message> checkApply(String t_name);
+	
+	
+}

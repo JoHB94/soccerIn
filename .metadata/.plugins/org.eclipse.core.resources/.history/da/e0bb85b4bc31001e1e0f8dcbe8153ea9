@@ -1,0 +1,9 @@
+package team.service;
+
+import team.model.Team;
+
+public interface TeamService {
+	
+	String teamCreate(Team t);
+	
+}

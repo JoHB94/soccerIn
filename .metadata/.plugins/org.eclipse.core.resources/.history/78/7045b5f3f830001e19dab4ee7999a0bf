@@ -1,0 +1,11 @@
+package sign.model;
+
+public class sign {
+	
+	private int sign_num;
+	private String id;
+	private String position;
+	private String t_name;
+	
+	
+}

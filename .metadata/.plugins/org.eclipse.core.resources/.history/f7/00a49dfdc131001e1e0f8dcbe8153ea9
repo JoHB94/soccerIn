@@ -1,0 +1,13 @@
+package message.service;
+
+import team.dao.TeamDao;
+import team.dao.TeamDaoImpl;
+
+public class MsgServiceImpl {
+	
+	private MsgDao dao;
+	
+	public MsgServiceImpl() {
+		this.dao = new MsgDaoImpl();
+	}
+}

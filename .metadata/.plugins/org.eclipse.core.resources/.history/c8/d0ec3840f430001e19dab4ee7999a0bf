@@ -1,0 +1,21 @@
+package message.model;
+
+import java.sql.Date;
+
+public class Message {
+
+	private int msg_num;
+	private String t_name;
+	private String id;
+	private int state;
+	private int direction;
+
+	public Message() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	
+	
+	
+
+}

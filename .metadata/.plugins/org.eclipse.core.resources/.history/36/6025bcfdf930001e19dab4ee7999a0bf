@@ -1,0 +1,20 @@
+package player.dao;
+
+import java.util.ArrayList;
+
+import player.model.Player;
+
+public interface PlayerDao {
+	
+	boolean checkDuplicatedId(String id);
+	
+	void insertPlayer(Player p);
+	
+	void deletePlayer(String id, String pwd);
+	
+	ArrayList<Player> selectAllPlayer();
+	
+	Player selectPlayer(String id);
+	
+	
+}

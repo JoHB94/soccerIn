@@ -1,0 +1,12 @@
+package message.service;
+
+import message.model.Message;
+
+public interface MsgService {
+	
+	boolean doScout(Message m);
+	
+	boolean doApply(Message m);
+	
+	boolean 
+}

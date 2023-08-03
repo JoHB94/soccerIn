@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function checkId() {
+		var idTxt = document.LoginForm.id;
+		var pwdTxt = document.LoginForm.pwd;
+
+		if (idTxt.value == "") {
+			alert("공란이 존재합니다.")
+			idTxt.value = "";
+			idTxt.focus();
+			return false;
+		}
+		if (pwdTxt.value == "") {
+			alert("공란이 존재합니다.")
+			pwdTxt.value = "";
+			pwdTxt.focus();
+			return false;
+		}
+	}
+</script>
+
+</head>
+<body>
+	<!-- javascript : 아이디와 패스워드중 공란이면 메세지 띄우고 전송x 
+	 아이디가 java, 패스워드가 abcd이면 로그인 ok!
+	 그 외에는 로그인 fail이라는 메세지를 보여주고 로그인 페이지로 링크를 건다.-->
+	<form method="post" action="LoginServlet" name="LoginForm"
+		onsubmit="return checkId()">
+		아이디 <input type="text" name="id"> 비밀번호<input type="password"
+			name="pwd"> <input type="submit" value="로그인" name="login">
+	</form>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function login(){
+		var idTxt=document.loginForm.id;
+		var pwdTxt=document.loginForm.pwd;
+		if(idTxt.value==""){
+			alert("아이디를 기재해주세요");
+			idTxt.value="";
+			idTxt.focus();
+			return false;
+		}
+		if(pwdTxt.value==""){
+			alert("비밀번호를 기재해주세요");
+			pwdTxt.value="";
+			pwdTxt.focus();
+			return false;
+		}
+		
+	}
+</script>
+</head>
+<body>
+<form action="LoginServlet" name="loginForm" method="get" onsubmit="return login()">
+	아이디:<input type="text" name="id"><br>
+	비밀번호:<input type="password" name="pwd"><br>
+	<input type="submit" value="로그인">
+</form>
+</body>
+</html>

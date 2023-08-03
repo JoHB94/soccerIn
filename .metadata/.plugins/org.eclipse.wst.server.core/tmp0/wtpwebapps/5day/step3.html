@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function showDetails() {
+		var name=document.userform.userName.value;
+		alert(name);
+		document.userform.userName.value=" ";
+		document.userform.userName.focus();
+	}
+</script>
+</head>
+<body>
+	<form method="get" action="" name="userform">
+		이름 : <input type="text" name="userName">
+		<input type="button" value="확인" onclick="showDetails()">
+	</form>
+</body>
+</html>

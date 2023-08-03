@@ -1,0 +1,24 @@
+package team.model;
+
+public class Team {
+
+	private int t_num;
+	private String t_owner;
+	private String t_name;
+	private String t_addr;
+	private String t_intro;
+	private int on_market = 0;
+
+	public Team() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public int getT_num() {
+		return t_num;
+	}
+	
+	
+	
+
+}

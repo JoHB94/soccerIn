@@ -1,0 +1,21 @@
+package player.service;
+
+import java.util.ArrayList;
+
+import player.model.Player;
+
+public interface PlayerService {
+	boolean playerJoin(Player p);
+
+	boolean playerExit(String id, String pwd);
+
+	ArrayList<Player> playerList();
+
+	Player playerInfo(String id);
+
+	boolean playerEdit(Player p);
+
+	boolean playerMarket(int onMarket);
+
+	Player login(String id, String pwd);
+}

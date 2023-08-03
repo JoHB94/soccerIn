@@ -1,0 +1,14 @@
+package message.dao;
+
+import conn.DBConnect;
+
+public class MsgDaoImpl {
+	
+	private DBConnect db;
+
+	public MsgDaoImpl() {
+		db = DBConnect.getInstance();
+	}
+	
+	
+}

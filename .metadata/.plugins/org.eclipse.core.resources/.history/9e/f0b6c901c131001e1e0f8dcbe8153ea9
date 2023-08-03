@@ -1,0 +1,5 @@
+package player.service;
+
+public class PlayerServiceImpl implements PlayerService{
+
+}

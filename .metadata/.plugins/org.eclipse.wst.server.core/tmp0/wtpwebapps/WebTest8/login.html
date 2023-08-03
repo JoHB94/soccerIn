@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function checkLogin(){
+		var loginTxt=document.loginForm;
+		
+		if(loginTxt.userId.value==""){
+			alert("아이디를 입력하세요.");
+			loginTxt.userId.focus();
+			loginTxt.userId="";
+			return false;
+		}
+		if(loginTxt.userPass.value==""){
+			alert("비밀번호를 입력하세요.");
+			loginTxt.userPass.focus();
+			loginTxt.userPass="";
+			return false;
+		}
+	}
+</script>
+</head>
+<body>
+<form action="LoginServlet" method="post" name="loginForm" onsubmit="return checkLogin()">
+	아 이 디:<input type="text" name="userId">
+	비밀번호 :<input type="password" name="userPass">
+	<input type="submit" name="로그인">
+</form>
+</body>
+</html>
