@@ -15,9 +15,9 @@ public class PlayerServiceImpl implements PlayerService{
 	}
 	
 	@Override
-	public boolean playerJoin(Player p) {
+	public void playerJoin(Player p) {
 		// TODO Auto-generated method stub
-		return false;
+		dao.insertPlayer(p);
 	}
 
 	@Override
@@ -35,7 +35,7 @@ public class PlayerServiceImpl implements PlayerService{
 	@Override
 	public Player playerInfo(String id) {
 		// TODO Auto-generated method stub
-		return null;
+		return dao.selectPlayer(id);
 	}
 
 	@Override
@@ -53,7 +53,13 @@ public class PlayerServiceImpl implements PlayerService{
 	@Override
 	public Player login(String id, String pwd) {
 		// TODO Auto-generated method stub
-		return null;
+		return dao.login(id, pwd);
+	}
+
+	@Override
+	public boolean checkId(String id) {
+		// TODO Auto-generated method stub
+		return dao.checkDuplicatedId(id);
 	}
 
 }

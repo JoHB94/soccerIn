@@ -5,7 +5,10 @@ import java.util.ArrayList;
 import player.model.Player;
 
 public interface PlayerService {
-	boolean playerJoin(Player p);
+	
+	boolean checkId(String id);
+	
+	void playerJoin(Player p);
 
 	void playerExit(String id, String pwd);
 

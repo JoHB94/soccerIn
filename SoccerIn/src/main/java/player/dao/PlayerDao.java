@@ -18,7 +18,7 @@ public interface PlayerDao {
 	
 	void updatePlayer(Player p);
 	
-	void updatePlayerMarket();
+	void updatePlayerMarket(String id, String onMarket);
 	
 	Player login(String id, String pwd);
 }
