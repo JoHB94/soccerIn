@@ -27,7 +27,7 @@
 			<td>포지션</td>
 			<td>
 				<select name= "position">
-					<option value="">선택 안함</option>
+					<option value="NO">선택 안함</option>
 					<option value="FW">공격수</option>
 					<option value="MF">미드필더</option>
 					<option value="DF">수비수</option>

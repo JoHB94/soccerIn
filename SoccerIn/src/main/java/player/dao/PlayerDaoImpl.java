@@ -87,16 +87,11 @@ public class PlayerDaoImpl implements PlayerDao {
 			} else {
 				pstmt.setInt(8, p.getWeight());
 			}
-			if (p.getSpeed() == 0) {
-				pstmt.setNull(9, Types.NUMERIC);
-			} else {
-				pstmt.setInt(9, p.getSpeed());
-			}
-			if (p.getPosition() == null) {
-				pstmt.setNull(10, Types.CHAR);
-			} else {
-				pstmt.setString(10, p.getPosition());
-			}
+			
+			/*speed와 position은 셀렉트 값으로 null일 수가 없다.*/
+			pstmt.setInt(9, p.getSpeed());
+			pstmt.setString(10, p.getPosition());
+			
 			if (p.getP_intro() == null) {
 				pstmt.setNull(11, Types.VARCHAR);
 			} else {

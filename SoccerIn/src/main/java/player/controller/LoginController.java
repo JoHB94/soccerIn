@@ -56,6 +56,7 @@ public class LoginController extends HttpServlet {
 			session.setAttribute("id", id);
 			RequestDispatcher dispatcher = request.getRequestDispatcher("/HomeController");
 			dispatcher.forward(request, response);
+			System.out.println("forward to homeCon");
 		}
 		
 	}

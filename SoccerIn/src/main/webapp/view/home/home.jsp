@@ -7,6 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+	<a href= "${pageContext.request.contextPath }/PlayerInfoController">내 정보 보기</a>
+	<a href= "${pageContext.request.contextPath }/PlayerListController">선수 목록 보기</a>
 </body>
 </html>
