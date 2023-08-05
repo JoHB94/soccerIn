@@ -55,6 +55,7 @@ public class MyInfoController extends HttpServlet {
 		int speed = p.getSpeed();
 		String position = p.getPosition();
 		String p_intro = p.getP_intro();
+		String p_profile = p.getP_profile();
 
 		request.setAttribute("p_name", p_name);
 		request.setAttribute("p_addr", p_addr);
@@ -64,6 +65,7 @@ public class MyInfoController extends HttpServlet {
 		request.setAttribute("speed", speed);
 		request.setAttribute("position", position);
 		request.setAttribute("p_intro", p_intro);
+		request.setAttribute("p_profile", p_profile);
 
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/view/player/playerInfo.jsp");
 		dispatcher.forward(request, response);

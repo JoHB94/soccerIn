@@ -40,6 +40,9 @@ public class PlayerInfoController extends HttpServlet {
 		PlayerService service = new PlayerServiceImpl();
 		
 		String id = request.getParameter("id");
+		
+		System.out.println("playerInfoCon의 String id 값: " + id);
+		
 		Player p = service.playerInfo(id);
 		
 		String p_name = p.getP_name();
@@ -50,6 +53,7 @@ public class PlayerInfoController extends HttpServlet {
 		int speed = p.getSpeed();
 		String position = p.getPosition();
 		String p_intro = p.getP_intro();
+		String p_profile = p.getP_profile();
 		
 		request.setAttribute("p_name", p_name);
 		request.setAttribute("p_addr", p_addr);
@@ -59,6 +63,7 @@ public class PlayerInfoController extends HttpServlet {
 		request.setAttribute("speed", speed);
 		request.setAttribute("position", position);
 		request.setAttribute("p_intro", p_intro);
+		request.setAttribute("p_profile", p_profile);
 		
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/view/player/playerInfo.jsp");
 		dispatcher.forward(request, response);

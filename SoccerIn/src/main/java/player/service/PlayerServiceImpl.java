@@ -29,7 +29,7 @@ public class PlayerServiceImpl implements PlayerService{
 	@Override
 	public ArrayList<Player> playerList() {
 		// TODO Auto-generated method stub
-		return null;
+		return dao.selectAllPlayer();
 	}
 
 	@Override

@@ -10,6 +10,11 @@
 <body>
 	<table border = "1">
 		<tr>
+			<td colspan= "2">
+				<img alt="" src="${requestScope.p_profile }" height= "300" width= "300">
+			</td>
+		</tr>
+		<tr>
 			<td>이름</td>
 			<td>${requestScope.p_name }</td>
 		</tr>

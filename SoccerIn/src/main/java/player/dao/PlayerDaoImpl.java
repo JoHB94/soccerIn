@@ -163,22 +163,23 @@ public class PlayerDaoImpl implements PlayerDao {
 			pstmt = conn.prepareStatement(sql);
 			rs = pstmt.executeQuery();
 			
-			int p_num = rs.getInt(1);
-			String id = rs.getString(2);
-			String pwd= rs.getString(3);
-			String p_name = rs.getString(4);
-			String p_email = rs.getString(5);
-			String p_addr = rs.getString(6);
-			Date birth = rs.getDate(7);
-			int height = rs.getInt(8);
-			int weight = rs.getInt(9);;
-			int speed =rs.getInt(10);;
-			String position = rs.getString(11);
-			String p_intro = rs.getString(12);
-			String p_profile = rs.getString(13);
-			int on_market = rs.getInt(14);
-			
 			while (rs.next()) {
+				
+				int p_num = rs.getInt(1);
+				String id = rs.getString(2);
+				String pwd= rs.getString(3);
+				String p_name = rs.getString(4);
+				String p_email = rs.getString(5);
+				String p_addr = rs.getString(6);
+				Date birth = rs.getDate(7);
+				int height = rs.getInt(8);
+				int weight = rs.getInt(9);;
+				int speed =rs.getInt(10);;
+				String position = rs.getString(11);
+				String p_intro = rs.getString(12);
+				String p_profile = rs.getString(13);
+				int on_market = rs.getInt(14);
+				
 				p.add(new Player(p_num, id, pwd, p_name, p_email, p_addr, 
 						birth, height, weight, speed, position, 
 						p_intro, p_profile, on_market));
@@ -205,12 +206,13 @@ public class PlayerDaoImpl implements PlayerDao {
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		Player p = null;
-		String sql = "select * from player where on_market = 1";
+		String sql = "select * from player where on_market = 1 and id = ?";
 		
 		try {
 			conn = db.getConnection();
 
 			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, id);
 			rs = pstmt.executeQuery();
 			
 			if(rs.next()) {
@@ -234,6 +236,8 @@ public class PlayerDaoImpl implements PlayerDao {
 						birth, height, weight, speed, position, 
 						p_intro, p_profile, on_market);
 				
+			} else {
+				return null;
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
