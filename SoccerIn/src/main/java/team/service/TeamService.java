@@ -5,8 +5,10 @@ import java.util.ArrayList;
 import team.model.Team;
 
 public interface TeamService {
+	
+	boolean checkDuplicateName(String t_name);
 
-	boolean teamCreate(Team t);
+	void teamCreate(Team t);
 
 	void teamDelete(String t_name);
 
@@ -17,4 +19,6 @@ public interface TeamService {
 	void teamEdit(Team t);
 
 	void teamMarket(int onMarket);
+	
+	String checkSign(String id);
 }

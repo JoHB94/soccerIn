@@ -2,6 +2,8 @@ package team.service;
 
 import java.util.ArrayList;
 
+import sign.dao.SignDao;
+import sign.dao.SignDaoImpl;
 import team.dao.TeamDao;
 import team.dao.TeamDaoImpl;
 import team.model.Team;
@@ -9,15 +11,17 @@ import team.model.Team;
 public class TeamServiceImpl implements  TeamService{
 	
 	private TeamDao dao;
+	private SignDao s_dao;
 	
 	public TeamServiceImpl() {
 		this.dao = new TeamDaoImpl();
+		this.s_dao = new SignDaoImpl();
 	}
 
 	@Override
-	public boolean teamCreate(Team t) {
+	public void teamCreate(Team t) {
 		// TODO Auto-generated method stub
-		return false;
+		 dao.insertTeam(t);;
 	}
 
 	@Override
@@ -48,5 +52,17 @@ public class TeamServiceImpl implements  TeamService{
 	public void teamMarket(int onMarket) {
 		// TODO Auto-generated method stub
 		
+	}
+
+	@Override
+	public String checkSign(String id) {
+		// TODO Auto-generated method stub
+		return s_dao.checkSign(id);
+	}
+
+	@Override
+	public boolean checkDuplicateName(String t_name) {
+		// TODO Auto-generated method stub
+		return dao.checkDuplicatedName(t_name);
 	}
 }

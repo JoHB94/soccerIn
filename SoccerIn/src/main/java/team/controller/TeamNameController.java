@@ -7,17 +7,20 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import team.service.TeamService;
+import team.service.TeamServiceImpl;
+
 /**
- * Servlet implementation class TeamCrerateController
+ * Servlet implementation class TeamNameController
  */
-@WebServlet("/TeamCrerateController")
-public class TeamCrerateController extends HttpServlet {
+@WebServlet("/TeamNameController")
+public class TeamNameController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public TeamCrerateController() {
+    public TeamNameController() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -27,7 +30,14 @@ public class TeamCrerateController extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		request.setCharacterEncoding("UTF-8");
+		response.setContentType("text/html; charset=UTF-8");
+		response.setCharacterEncoding("UTF-8");
+		
+		
+		TeamService service = new TeamServiceImpl();
+		
+		
 	}
 
 	/**

@@ -7,4 +7,6 @@ public interface SignDao {
 	void insertSign(Sign s);
 
 	void deleteSign(String id);
+	
+	String checkSign(String id);
 }
