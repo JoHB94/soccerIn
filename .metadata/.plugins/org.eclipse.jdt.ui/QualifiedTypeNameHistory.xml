@@ -55,9 +55,9 @@
     <fullyQualifiedTypeName name="java.io.File"/>
     <fullyQualifiedTypeName name="java.sql.Date"/>
     <fullyQualifiedTypeName name="java.util.ArrayList"/>
-    <fullyQualifiedTypeName name="javax.servlet.RequestDispatcher"/>
+    <fullyQualifiedTypeName name="player.model.Player"/>
     <fullyQualifiedTypeName name="player.service.PlayerService"/>
     <fullyQualifiedTypeName name="player.service.PlayerServiceImpl"/>
-    <fullyQualifiedTypeName name="player.model.Player"/>
     <fullyQualifiedTypeName name="javax.servlet.http.HttpSession"/>
+    <fullyQualifiedTypeName name="javax.servlet.RequestDispatcher"/>
 </qualifiedTypeNameHistroy>

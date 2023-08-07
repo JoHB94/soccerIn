@@ -125,15 +125,19 @@ public class PlayerDaoImpl implements PlayerDao {
 		// TODO Auto-generated method stub
 		Connection conn = null;
 		PreparedStatement pstmt = null;
-		String sql = "delete from team where id = ? and pwd= ?";
-
+		String sql = "delete from player where id=? and pwd=?";
+		System.out.println("dao 회원탈퇴 호출 id: " + id );
+		System.out.println("dao 회원탈퇴 호출 pwd: " + pwd );
+		
 		try {
 			conn = db.getConnection();
-
+		
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, id);
 			pstmt.setString(2, pwd);
-			pstmt.executeUpdate();
+			int i = pstmt.executeUpdate();
+			System.out.println("변화결과: "+i);
+			
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
