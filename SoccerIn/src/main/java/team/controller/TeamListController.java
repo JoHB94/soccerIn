@@ -1,11 +1,18 @@
 package team.controller;
 
 import java.io.IOException;
+import java.util.ArrayList;
+
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import team.model.Team;
+import team.service.TeamService;
+import team.service.TeamServiceImpl;
 
 /**
  * Servlet implementation class TeamListController
@@ -27,7 +34,12 @@ public class TeamListController extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		TeamService service = new TeamServiceImpl();
+		ArrayList<Team> t = service.teamList();
+		request.setAttribute("t", t);
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/view/team/teamList.jsp");
+		dispatcher.forward(request, response);
+		
 	}
 
 	/**

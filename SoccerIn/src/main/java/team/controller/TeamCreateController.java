@@ -45,8 +45,10 @@ public class TeamCreateController extends HttpServlet {
 		TeamService service = new TeamServiceImpl();
 		String t_name = request.getParameter("t_name");
 		boolean flag = service.checkDuplicateName(t_name);
+		
+		System.out.println("팀이름 중복여부 조회: " + flag);
 		/*flag가 true이면 중복 t_name이 아닙니다.*/
-		if(flag) {
+		if(!flag) {
 			
 			Team t = new Team();
 			

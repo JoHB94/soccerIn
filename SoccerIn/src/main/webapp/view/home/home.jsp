@@ -14,6 +14,7 @@
 	
 	<hr>
 	<a href= "${pageContext.request.contextPath }/view/team/teamCreate.jsp">구단 창설</a>
+	<a href= "${pageContext.request.contextPath }/TeamListController">구인 구단 리스트</a>
 	
 </body>
 </html>

@@ -33,13 +33,13 @@ public class TeamServiceImpl implements  TeamService{
 	@Override
 	public ArrayList<Team> teamList() {
 		// TODO Auto-generated method stub
-		return null;
+		return dao.selectAllTeam();
 	}
 
 	@Override
 	public Team teamInfo(String id) {
 		// TODO Auto-generated method stub
-		return null;
+		return dao.selectTeam(id);
 	}
 
 	@Override

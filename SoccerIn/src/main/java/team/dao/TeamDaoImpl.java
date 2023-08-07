@@ -23,21 +23,25 @@ public class TeamDaoImpl implements TeamDao {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs= null;
+		
 		String sql = "select 1 from team where t_name = ?";
-		/*true 반환시 db에 중복 t_name 없음 : 팀생성 가능*/
+		/*쿼리조회값이 있으면 true*/
 		try {
 			conn = db.getConnection();
 			
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, t_name);
 			rs = pstmt.executeQuery();
-			if (!rs.next()) {
+			if(!rs.next()) {
+				/*rs.next가 flase라면 중복데이터가 없다는 뜻*/
 				return true;
 			}
 		} catch(SQLException e) {
 			e.printStackTrace();
+			
 		} finally {
 			try {
+				rs.close();
 				pstmt.close();
 				conn.close();
 			} catch (SQLException e) {
@@ -117,16 +121,24 @@ public class TeamDaoImpl implements TeamDao {
 		// TODO Auto-generated method stub
 		Connection conn = null;
 		PreparedStatement pstmt = null;
-		String sql = "";
+		ResultSet rs = null;
+		ArrayList<Team> list = new ArrayList<Team>();
+		String sql = "select * from team where on_market = 1";
 		
 		try {
 			conn = db.getConnection();
 			
 			pstmt = conn.prepareStatement(sql);
+			rs=pstmt.executeQuery();
+			
+			while(rs.next()) {
+				list.add(new Team(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5), rs.getString(6), rs.getInt(7)));
+			}
 		} catch(SQLException e) {
 			e.printStackTrace();
 		} finally {
 			try {
+				rs.close();
 				pstmt.close();
 				conn.close();
 			} catch (SQLException e) {
@@ -134,24 +146,32 @@ public class TeamDaoImpl implements TeamDao {
 				e.printStackTrace();
 			}
 		}
-		return null;
+		return list;
 	}
 
 	@Override
-	public Team selectTeam(String id) {
+	public Team selectTeam(String t_name) {
 		// TODO Auto-generated method stub
 		Connection conn = null;
 		PreparedStatement pstmt = null;
-		String sql = "";
+		ResultSet rs = null;
+		Team t =null;
+		String sql = "select * from team where on_market=1 and t_name =?";
 		
 		try {
 			conn = db.getConnection();
 			
 			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, t_name);
+			rs=pstmt.executeQuery();
+			if(rs.next()) {
+				t = new Team(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5), rs.getString(6), rs.getInt(7));
+			}
 		} catch(SQLException e) {
 			e.printStackTrace();
 		} finally {
 			try {
+				rs.close();
 				pstmt.close();
 				conn.close();
 			} catch (SQLException e) {
@@ -159,7 +179,7 @@ public class TeamDaoImpl implements TeamDao {
 				e.printStackTrace();
 			}
 		}
-		return null;
+		return t;
 	}
 
 	@Override

@@ -14,7 +14,7 @@ public interface TeamDao {
 
 	ArrayList<Team> selectAllTeam();
 
-	Team selectTeam(String id);
+	Team selectTeam(String t_name);
 
 	void updateTeam(Team t);
 
