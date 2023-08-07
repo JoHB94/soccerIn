@@ -23,7 +23,7 @@ public class PlayerServiceImpl implements PlayerService{
 	@Override
 	public void playerExit(String id, String pwd) {
 		// TODO Auto-generated method stub
-		
+		dao.deletePlayer(id, pwd);
 	}
 
 	@Override
@@ -41,13 +41,13 @@ public class PlayerServiceImpl implements PlayerService{
 	@Override
 	public void playerEdit(Player p) {
 		// TODO Auto-generated method stub
-		
+		dao.updatePlayer(p);
 	}
 
 	@Override
 	public void playerMarket(int onMarket) {
 		// TODO Auto-generated method stub
-		
+		dao.updatePlayerMarket(null, null);
 	}
 
 	@Override

@@ -259,9 +259,9 @@ public class PlayerDaoImpl implements PlayerDao {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		
-		String sql = "update palyer set pwd = ?, p_email = ?, p_addr = ?, "
-				+ "birth = ?, height = ?, weight = ?, speed = ?, "
-				+ "position = ?, p_intro = ?, p_profile = ? where id = ?";
+		System.out.println("dao에서 update 호출! 수정 정보: " + p);
+		
+		String sql = "update player set pwd = ?, p_email = ?, p_addr = ?, birth = ?, height = ?, weight = ?, speed = ?, position = ?, p_intro = ?, p_profile = ?, on_market = ? where id = ?";
 
 		try {
 			conn = db.getConnection();
@@ -276,7 +276,7 @@ public class PlayerDaoImpl implements PlayerDao {
 			if (p.getBirth() == null) {
 				pstmt.setNull(4, Types.DATE);
 			} else {
-				pstmt.setDate(5, p.getBirth());
+				pstmt.setDate(4, p.getBirth());
 			}
 			if (p.getHeight() == 0) {
 				pstmt.setNull(5, Types.NUMERIC);
@@ -309,8 +309,10 @@ public class PlayerDaoImpl implements PlayerDao {
 				pstmt.setString(10, p.getP_profile());
 			}
 			
-			pstmt.setString(11, p.getId());
+			pstmt.setInt(11, p.getOn_market());
 			
+			pstmt.setString(12, p.getId());
+			pstmt.executeUpdate();
 			
 		} catch (SQLException e) {
 			e.printStackTrace();
