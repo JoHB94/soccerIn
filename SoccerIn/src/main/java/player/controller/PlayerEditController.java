@@ -44,6 +44,9 @@ public class PlayerEditController extends HttpServlet {
 		response.setContentType("text/html; charset=UTF-8");
 		response.setCharacterEncoding("UTF-8");
 		
+		String enctype = request.getContentType();
+        System.out.println("Player Edit Controller enctype: " + enctype);
+		
 		HttpSession session = request.getSession();
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 		PlayerService service = new PlayerServiceImpl();

@@ -42,13 +42,16 @@ public class TeamCreateController extends HttpServlet {
 		response.setContentType("text/html; charset=UTF-8");
 		response.setCharacterEncoding("UTF-8");
 		
+		String enctype = request.getContentType();
+        System.out.println("CreateController enctype: " + enctype);
+		
 		TeamService service = new TeamServiceImpl();
 		String t_name = request.getParameter("t_name");
 		boolean flag = service.checkDuplicateName(t_name);
 		
 		System.out.println("팀이름 중복여부 조회: " + flag);
 		/*flag가 true이면 중복 t_name이 아닙니다.*/
-		if(!flag) {
+		if(flag) {
 			
 			Team t = new Team();
 			
@@ -67,7 +70,7 @@ public class TeamCreateController extends HttpServlet {
 				t.setT_name(multi.getParameter("t_name"));
 				t.setT_addr(multi.getParameter("t_addr"));
 				t.setT_intro(multi.getParameter("t_intro"));
-				t.setT_profile(multi.getParameter("t_profile"));
+				
 				t.setOn_market(Integer.parseInt(multi.getParameter("onMarket")));
 				
 				//전송한 전체 파일 이름들을 가져옴
@@ -79,7 +82,7 @@ public class TeamCreateController extends HttpServlet {
 					File file = multi.getFile(file1);
 				}
 				
-				t.setT_profile("/profile_img/" + img);
+				t.setT_profile("/t_profile_img/" + img);
 				service.teamCreate(t);
 				response.sendRedirect(request.getContextPath() + "/TeamInfoController");
 				

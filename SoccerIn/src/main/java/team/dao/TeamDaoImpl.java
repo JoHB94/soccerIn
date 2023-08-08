@@ -93,16 +93,19 @@ public class TeamDaoImpl implements TeamDao {
 	}
 
 	@Override
-	public void deleteTeam(Team t) {
+	public void deleteTeam(String t_name, String t_owner) {
 		// TODO Auto-generated method stub
 		Connection conn = null;
 		PreparedStatement pstmt = null;
-		String sql = "";
+		String sql = "delete from team where t_name =? and t_owner=?";
 		
 		try {
 			conn = db.getConnection();
 			
 			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, t_name);
+			pstmt.setString(2, t_owner);
+			pstmt.executeUpdate();
 		} catch(SQLException e) {
 			e.printStackTrace();
 		} finally {
@@ -187,12 +190,16 @@ public class TeamDaoImpl implements TeamDao {
 		// TODO Auto-generated method stub
 		Connection conn = null;
 		PreparedStatement pstmt = null;
-		String sql = "";
+		String sql = "update team set t_addr=?, t_profile=?,t_intro=?,on_market=?";
 		
 		try {
 			conn = db.getConnection();
 			
 			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, t.getT_addr());
+			pstmt.setString(2, t.getT_profile());
+			pstmt.setString(3, t.getT_intro());
+			pstmt.setInt(4, t.getOn_market());
 		} catch(SQLException e) {
 			e.printStackTrace();
 		} finally {
@@ -230,6 +237,41 @@ public class TeamDaoImpl implements TeamDao {
 			}
 		}
 		
+	}
+
+	@Override
+	public String getOwner(String t_name) {
+		// TODO Auto-generated method stub
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		String sql = "select t_owner from team where t_name = ?";
+		String t_owner = null;
+		
+		try {
+			conn = db.getConnection();
+			
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, t_name);
+			rs = pstmt.executeQuery();
+			
+			if(rs.next()) {
+				t_owner = rs.getString(1);
+			}
+		} catch(SQLException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				rs.close();
+				pstmt.close();
+				conn.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		
+		return t_owner;
 	}
 
 	

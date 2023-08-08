@@ -33,8 +33,10 @@ public class TeamInfoController extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		/*해당 컨트롤러는 teamList.jsp에서 t_name을 받아와 team 테이블을 조회한 후 값을 반환한다.*/
 		TeamService service = new TeamServiceImpl();
 		String t_name = request.getParameter("t_name");
+		
 		Team t =service.teamInfo(t_name);
 		request.setAttribute("t", t);
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/view/team/teamInfo.jsp");

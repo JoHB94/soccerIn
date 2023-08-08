@@ -3,6 +3,7 @@ package sign.dao;
 import sign.model.Sign;
 
 public interface SignDao {
+	
 
 	void insertSign(Sign s);
 

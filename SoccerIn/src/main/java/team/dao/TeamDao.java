@@ -10,7 +10,7 @@ public interface TeamDao {
 
 	void insertTeam(Team t);
 
-	void deleteTeam(Team t);
+	void deleteTeam(String t_name, String t_owner);
 
 	ArrayList<Team> selectAllTeam();
 
@@ -19,5 +19,7 @@ public interface TeamDao {
 	void updateTeam(Team t);
 
 	void updateTeamMarket();
+	
+	String getOwner(String t_name);
 
 }

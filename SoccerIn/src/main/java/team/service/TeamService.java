@@ -10,7 +10,7 @@ public interface TeamService {
 
 	void teamCreate(Team t);
 
-	void teamDelete(String t_name);
+	void teamDelete(String t_name,String t_owner);
 
 	ArrayList<Team> teamList();
 
@@ -21,4 +21,7 @@ public interface TeamService {
 	void teamMarket(int onMarket);
 	
 	String checkSign(String id);
+	
+	String getOwner(String t_name);
+	
 }

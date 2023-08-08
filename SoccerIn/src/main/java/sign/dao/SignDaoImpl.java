@@ -21,12 +21,15 @@ public class SignDaoImpl implements SignDao{
 		// TODO Auto-generated method stub
 		Connection conn = null;
 		PreparedStatement pstmt = null;
-		String sql = "";
+		String sql = "insert into sign values(seq_sign.nextval,?,?)";
 		
 		try {
 			conn = db.getConnection();
 			
 			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, s.getId());
+			pstmt.setString(2, s.getT_name());
+			pstmt.executeUpdate();
 		} catch(SQLException e) {
 			e.printStackTrace();
 		} finally {
@@ -45,12 +48,14 @@ public class SignDaoImpl implements SignDao{
 		// TODO Auto-generated method stub
 		Connection conn = null;
 		PreparedStatement pstmt = null;
-		String sql = "";
+		String sql = "delete from sign where id =?";
 		
 		try {
 			conn = db.getConnection();
 			
 			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, id);
+			pstmt.executeUpdate();
 		} catch(SQLException e) {
 			e.printStackTrace();
 		} finally {

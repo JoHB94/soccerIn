@@ -14,7 +14,7 @@ public interface MsgService {
 	
 	ArrayList<Message> checkApply(String t_name);
 	
-	void acceptMsg(String id, String t_name, String position);
+	void acceptMsg(String id, String t_name);
 	
 	void rejectMsg(String id, String t_name);
 	

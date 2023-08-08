@@ -1,9 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="javax.servlet.http.HttpServlet"/>
-    <fullyQualifiedTypeName name="org.eclipse.jdt.internal.compiler.apt.model.AnnotationMemberValue"/>
-    <fullyQualifiedTypeName name="java.io.PrintWriter"/>
-    <fullyQualifiedTypeName name="java.net.http.HttpRequest"/>
     <fullyQualifiedTypeName name="javax.print.attribute.HashPrintRequestAttributeSet"/>
     <fullyQualifiedTypeName name="model.MemberDao"/>
     <fullyQualifiedTypeName name="java.sql.Statement"/>
@@ -42,11 +38,9 @@
     <fullyQualifiedTypeName name="message.dao.MsgDao"/>
     <fullyQualifiedTypeName name="sign.dao.SignDao"/>
     <fullyQualifiedTypeName name="message.model.Message"/>
-    <fullyQualifiedTypeName name="team.service.TeamService"/>
     <fullyQualifiedTypeName name="message.service.MsgService"/>
     <fullyQualifiedTypeName name="java.sql.Types"/>
     <fullyQualifiedTypeName name="player.dao.PlayerDaoImpl"/>
-    <fullyQualifiedTypeName name="java.sql.ResultSet"/>
     <fullyQualifiedTypeName name="com.oreilly.servlet.MultipartRequest"/>
     <fullyQualifiedTypeName name="com.oreilly.servlet.multipart.DefaultFileRenamePolicy"/>
     <fullyQualifiedTypeName name="java.lang.Exception"/>
@@ -58,6 +52,12 @@
     <fullyQualifiedTypeName name="player.model.Player"/>
     <fullyQualifiedTypeName name="player.service.PlayerService"/>
     <fullyQualifiedTypeName name="player.service.PlayerServiceImpl"/>
+    <fullyQualifiedTypeName name="sign.dao.SignDaoImpl"/>
+    <fullyQualifiedTypeName name="team.service.TeamService"/>
+    <fullyQualifiedTypeName name="team.controller.TeamEditFormController"/>
     <fullyQualifiedTypeName name="javax.servlet.http.HttpSession"/>
+    <fullyQualifiedTypeName name="team.service.TeamServiceImpl"/>
+    <fullyQualifiedTypeName name="java.sql.ResultSet"/>
     <fullyQualifiedTypeName name="javax.servlet.RequestDispatcher"/>
+    <fullyQualifiedTypeName name="team.model.Team"/>
 </qualifiedTypeNameHistroy>

@@ -4,15 +4,17 @@ public class Sign {
 
 	private int sign_num;
 	private String id;
-	private String position;
 	private String t_name;
 
-	public Sign(int sign_num, String id, String position, String t_name) {
+	public Sign(int sign_num, String id, String t_name) {
 		super();
 		this.sign_num = sign_num;
 		this.id = id;
-		this.position = position;
 		this.t_name = t_name;
+	}
+
+	public Sign() {
+		// TODO Auto-generated constructor stub
 	}
 
 	public int getSign_num() {
@@ -31,13 +33,6 @@ public class Sign {
 		this.id = id;
 	}
 
-	public String getPosition() {
-		return position;
-	}
-
-	public void setPosition(String position) {
-		this.position = position;
-	}
 
 	public String getT_name() {
 		return t_name;
@@ -49,7 +44,7 @@ public class Sign {
 
 	@Override
 	public String toString() {
-		return "sign [sign_num=" + sign_num + ", id=" + id + ", position=" + position + ", t_name=" + t_name + "]";
+		return "sign [sign_num=" + sign_num + ", id=" + id + ", t_name=" + t_name + "]";
 	}
 
 }

@@ -49,9 +49,9 @@ public class LoginController extends HttpServlet {
 		String pwd = request.getParameter("pwd");
 		
 		Player p = service.login(id, pwd);
-		String t_name = t_service.checkSign(id);
+		String t_name = t_service.checkSign(id); 
+		System.out.println("가져온 팀 이름:"+t_name);
 		
-		System.out.println("로그인 결과??"+p);
 		
 		if(p == null) {
 			request.setAttribute("message", "조건에 해당하는 데이터 없음");
@@ -69,6 +69,8 @@ public class LoginController extends HttpServlet {
 			dispatcher.forward(request, response);
 		}
 		
+		System.out.println("로그인 결과 id: "+ (String)session.getAttribute("id"));
+		System.out.println("로그인 결과 t_name: "+ (String)session.getAttribute("t_name"));
 	}
 
 	/**
