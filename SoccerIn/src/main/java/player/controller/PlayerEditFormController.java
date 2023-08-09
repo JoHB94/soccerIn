@@ -40,11 +40,17 @@ public class PlayerEditFormController extends HttpServlet {
 		
 		String id = (String)session.getAttribute("id");
 		Player p = service.playerInfo(id);
-		request.setAttribute("p", p);
 		
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/view/player/playerEdit.jsp");
-		dispatcher.forward(request, response);
-		
+		if(id == null) {
+			response.sendRedirect(request.getContextPath() + "/view/player/login.jsp");
+		} else {
+			
+			request.setAttribute("p", p);
+			
+			RequestDispatcher dispatcher = request.getRequestDispatcher("/view/player/playerEdit.jsp");
+			dispatcher.forward(request, response);
+			
+		}
 	}
 
 	/**

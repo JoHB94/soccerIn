@@ -10,7 +10,7 @@ public class Message {
 	private int state;
 	private int direction;
 
-	public Message(int msg_num, String t_name, String id, int state, int direction) {
+	public Message(int msg_num, String id, String t_name, int state, int direction) {
 		super();
 		this.msg_num = msg_num;
 		this.t_name = t_name;

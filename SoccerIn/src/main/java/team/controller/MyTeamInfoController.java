@@ -40,12 +40,18 @@ public class MyTeamInfoController extends HttpServlet {
 		HttpSession session = request.getSession();
 		TeamService service = new TeamServiceImpl();
 		String t_name = (String) session.getAttribute("t_name");
+		String id = (String)session.getAttribute("id");
 		System.out.println("아이디: " + (String)session.getAttribute("id") + "팀 이름: " + (String)session.getAttribute("t_name"));
-
-		Team t = service.teamInfo(t_name);
-		request.setAttribute("t", t);
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/view/team/teamInfo.jsp");
-		dispatcher.forward(request, response);
+		
+		if(id == null) {
+			response.sendRedirect(request.getContextPath() + "/view/player/login.jsp");
+		} else {
+			
+			Team t = service.teamInfo(t_name);
+			request.setAttribute("t", t);
+			RequestDispatcher dispatcher = request.getRequestDispatcher("/view/team/teamInfo.jsp");
+			dispatcher.forward(request, response);
+		}
 
 	}
 

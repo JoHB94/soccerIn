@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+	<h3>메세지 내역 없음</h3>
 </body>
 </html>

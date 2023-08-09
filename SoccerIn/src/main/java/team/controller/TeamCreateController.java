@@ -10,6 +10,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.oreilly.servlet.MultipartRequest;
 import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
@@ -42,6 +43,7 @@ public class TeamCreateController extends HttpServlet {
 		response.setContentType("text/html; charset=UTF-8");
 		response.setCharacterEncoding("UTF-8");
 		
+		HttpSession session = request.getSession();
 		String enctype = request.getContentType();
         System.out.println("CreateController enctype: " + enctype);
 		
@@ -84,7 +86,9 @@ public class TeamCreateController extends HttpServlet {
 				
 				t.setT_profile("/t_profile_img/" + img);
 				service.teamCreate(t);
-				response.sendRedirect(request.getContextPath() + "/TeamInfoController");
+				/*로그아웃으로 넘겨버리고 다시 로그인 하게끔 만들기.*/
+				session.invalidate();
+				response.sendRedirect(request.getContextPath() + "/view/player/login.jsp");
 				
 			} catch(Exception e) {
 				e.printStackTrace();

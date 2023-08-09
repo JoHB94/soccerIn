@@ -33,7 +33,6 @@ public class TeamCheckController extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
 	/*해당 컨트롤러는 session의 아이디와 t_name값이 없으면 팀을 생성할 수 있다.*/
 		HttpSession session = request.getSession();
 		String t_name = (String)session.getAttribute("t_name");
@@ -43,6 +42,7 @@ public class TeamCheckController extends HttpServlet {
 			dispatcher.forward(request, response);
 		} else {
 			/*소속된 팀이 있으면 홈으로*/
+			request.setAttribute("failMessage", "이미 소속된 팀이 있습니다.");
 			RequestDispatcher dispatcher = request.getRequestDispatcher("/view/home/home.jsp");
 			dispatcher.forward(request, response);
 		}

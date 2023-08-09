@@ -127,6 +127,11 @@
 			</c:choose>
 		</td>
 		</tr>
+		
 	</table>
+ 	<form name="ScoutForm" method="post" action="${pageContext.request.contextPath}/ScoutController">
+		<input type= "hidden" name= "id" value="${requestScope.id}">
+		<input type= "submit" value="영입제안하기">
+	</form>
 </body>
 </html>

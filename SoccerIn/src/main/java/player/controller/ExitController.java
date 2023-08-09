@@ -44,7 +44,7 @@ public class ExitController extends HttpServlet {
 		service.playerExit(id, pwd);
 		session.invalidate();
 		
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/view/player/login.jsp");
+		response.sendRedirect(request.getContextPath() + "/view/player/login.jsp");
 	}
 
 	/**

@@ -22,14 +22,14 @@ public class MsgDaoImpl implements MsgDao{
 		// TODO Auto-generated method stub
 		Connection conn = null;
 		PreparedStatement pstmt = null;
-		String sql = "insert into message values(seq_message,?,?,0,?)";
+		String sql = "insert into message values(seq_message.nextval,?,?,0,?)";
 		
 		try {
 			conn = db.getConnection();
 			
 			pstmt = conn.prepareStatement(sql);
-			pstmt.setString(1, m.getT_name());
-			pstmt.setString(2, m.getId());
+			pstmt.setString(1, m.getId());
+			pstmt.setString(2, m.getT_name());
 			pstmt.setInt(3, m.getDirection());
 			pstmt.executeUpdate();
 		} catch(SQLException e) {

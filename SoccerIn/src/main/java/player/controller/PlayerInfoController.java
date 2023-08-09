@@ -55,6 +55,7 @@ public class PlayerInfoController extends HttpServlet {
 		String p_intro = p.getP_intro();
 		String p_profile = p.getP_profile();
 		
+		request.setAttribute("id", id);
 		request.setAttribute("p_name", p_name);
 		request.setAttribute("p_addr", p_addr);
 		request.setAttribute("birth", birth);

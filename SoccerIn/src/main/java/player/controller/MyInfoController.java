@@ -45,30 +45,36 @@ public class MyInfoController extends HttpServlet {
 		PlayerService service = new PlayerServiceImpl();
 		HttpSession session = request.getSession();
 		String id = (String) session.getAttribute("id");
-		Player p = service.playerInfo(id);
-
-		String p_name = p.getP_name();
-		String p_addr = p.getP_addr();
-		Date birth = p.getBirth();
-		int height = p.getHeight();
-		int weight = p.getWeight();
-		int speed = p.getSpeed();
-		String position = p.getPosition();
-		String p_intro = p.getP_intro();
-		String p_profile = p.getP_profile();
-
-		request.setAttribute("p_name", p_name);
-		request.setAttribute("p_addr", p_addr);
-		request.setAttribute("birth", birth);
-		request.setAttribute("height", height);
-		request.setAttribute("weight", weight);
-		request.setAttribute("speed", speed);
-		request.setAttribute("position", position);
-		request.setAttribute("p_intro", p_intro);
-		request.setAttribute("p_profile", p_profile);
-
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/view/player/playerInfo.jsp");
-		dispatcher.forward(request, response);
+		
+		if(id==null) {
+			response.sendRedirect(request.getContextPath() + "/view/player/login.jsp");
+		} else {
+			
+			Player p = service.playerInfo(id);
+			
+			String p_name = p.getP_name();
+			String p_addr = p.getP_addr();
+			Date birth = p.getBirth();
+			int height = p.getHeight();
+			int weight = p.getWeight();
+			int speed = p.getSpeed();
+			String position = p.getPosition();
+			String p_intro = p.getP_intro();
+			String p_profile = p.getP_profile();
+			
+			request.setAttribute("p_name", p_name);
+			request.setAttribute("p_addr", p_addr);
+			request.setAttribute("birth", birth);
+			request.setAttribute("height", height);
+			request.setAttribute("weight", weight);
+			request.setAttribute("speed", speed);
+			request.setAttribute("position", position);
+			request.setAttribute("p_intro", p_intro);
+			request.setAttribute("p_profile", p_profile);
+			
+			RequestDispatcher dispatcher = request.getRequestDispatcher("/view/player/playerInfo.jsp");
+			dispatcher.forward(request, response);
+		}
 	}
 
 	/**

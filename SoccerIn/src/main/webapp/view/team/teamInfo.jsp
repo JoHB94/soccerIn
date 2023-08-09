@@ -26,19 +26,29 @@
 			return false;
 		}
 	}
+	function didApply(){
+		var message = ${requestScope.didApply};
+		alert("message");
+	}
+	function failApply(){
+		var message = ${requestScope.failApply};
+		alert("message");
+	}
 </script>
 </head>
 <body>
-	<!--requestScope에 등록된 t_name이 없으면, 내 구단 조회 중 session에 등록된 t_name이 없는것, 즉 가입된 팀이 없다.  -->
-	<c:if test="${empty requestScope.t.t_name }">
-		<jsp:forward page="/view/team/failTeamInfo.jsp"></jsp:forward>
-	</c:if>
 	<!-- requestScope에 NoOwner가 등록 되어 있다면, -->
 	<c:if test="${not empty requestScope.NoOwner}">
 		<script> noOwner(); </script>
 	</c:if>
 	<c:if test="${not empty requestScope.NoOwnerDel}">
 		<script> noOwnerDel(); </script>
+	</c:if>
+	<c:if test="${not empty requestScope.didApply}">
+		<script> didApply(); </script>
+	</c:if>
+	<c:if test="${not empty requestScope.failApply}">
+		<script> failApply(); </script>
 	</c:if>
 	<table border="1">
 		<tr>
@@ -65,16 +75,20 @@
 		</tr>
 		<tr>
 			<td colspan="2">
-				<form action= "${pageContext.request.contextPath}/TeamEditFormController">
+				<form method= "post" action= "${pageContext.request.contextPath}/TeamEditFormController">
 					<input type= "submit" value= "수정하기" >
 					<input type= "hidden" name= "t_name" value= "${requestScope.t.t_name}">		
 				</form>
-				<form name= "DelForm" action= "${pageContext.request.contextPath}/TeamDelController">
+				<form name= "DelForm" method= "post" action= "${pageContext.request.contextPath}/TeamDelController">
 					<input type= "button" value= "삭제" onclick= "return checkDelTeam()" >
 					<input type= "hidden" name= "t_name" value= "${requestScope.t.t_name}">		
 				</form>
 			</td>
 		</tr>
 	</table>
+	<form name ="ApplyForm" method= "post" action= "${pageContext.request.contextPath}/ApplyController">
+		<input type= "hidden" name= "t_name" value="${requestScope.t.t_name}">
+		<input type= "submit" value="입단신청하기">
+	</form>
 </body>
 </html>

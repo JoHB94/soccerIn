@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import team.model.Team;
 import team.service.TeamService;
@@ -34,14 +35,21 @@ public class TeamInfoController extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		/*해당 컨트롤러는 teamList.jsp에서 t_name을 받아와 team 테이블을 조회한 후 값을 반환한다.*/
-		TeamService service = new TeamServiceImpl();
-		String t_name = request.getParameter("t_name");
-		
-		Team t =service.teamInfo(t_name);
-		request.setAttribute("t", t);
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/view/team/teamInfo.jsp");
-		dispatcher.forward(request, response);
-		
+		HttpSession session = request.getSession();
+		String id = (String)session.getAttribute("id");
+		if(id == null) {
+			response.sendRedirect(request.getContextPath() + "/view/player/login.jsp");
+		} else {
+			
+			TeamService service = new TeamServiceImpl();
+			String t_name = request.getParameter("t_name");
+			
+			Team t =service.teamInfo(t_name);
+			request.setAttribute("t", t);
+			RequestDispatcher dispatcher = request.getRequestDispatcher("/view/team/teamInfo.jsp");
+			dispatcher.forward(request, response);
+			
+		}
 	}
 
 	/**
