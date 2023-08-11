@@ -1,8 +1,0 @@
-package player.service;
-
-import player.model.Player;
-
-public interface PlayerService {
-	void playerJoin(Player p);
-	void playerExit(String id, String pwd);
-}

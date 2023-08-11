@@ -1,0 +1,63 @@
+@charset "UTF-8";
+#back{
+
+}
+
+#header{
+	height: 5rem;
+}
+
+#title{
+	font-size:60px;
+	text-align:center;
+}
+
+#100{
+	width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#card{
+	margin: 0 auto;
+    margin-bottom: 2rem;
+    padding: 3rem;
+    border-radius: 1rem;
+    background-color: white;
+    object-fit: cover;
+    width: 50%;
+    box-shadow: 2px 2px 5px 2px rgba(0, 0, 0, 0.5);
+}
+
+#name{
+	width: 100%;
+	text-align: center;
+    font-size: 30px;
+}
+
+#leftright{
+	width: 100%;
+	display: flex; /* 추가된 부분 */
+  	justify-content: space-between; /* 추가된 부분 */
+}
+
+#card_left{
+	flex:1;
+	margin-left: 1rem;
+    width: 45%;
+}
+
+#card_right{
+	flex:1;
+	margin-left: 1rem;
+    width: 45%;
+}
+
+#card_button{
+
+}
+
+#team_button{
+	display:flex;
+	justify-content:right;
+}

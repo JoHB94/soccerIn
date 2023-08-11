@@ -14,7 +14,7 @@ public interface TeamService {
 
 	ArrayList<Team> teamList();
 
-	Team teamInfo(String id);
+	Team teamInfo(String t_name);
 
 	void teamEdit(Team t);
 

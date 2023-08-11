@@ -15,6 +15,6 @@
 	<c:if test="${not empty requestScope.failScout }">
 		<h3>${requestScope.failScout}</h3>
 	</c:if>
-
+<jsp:include page="/view/home/footer.jsp"></jsp:include>
 </body>
 </html>

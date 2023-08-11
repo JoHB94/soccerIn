@@ -16,30 +16,50 @@ function openPopup(id,t_name) {
     window.open(url, name, options);
 }
 </script>
+<link href="${pageContext.request.contextPath}/view/message/css/messageListCss.css" rel="stylesheet" type="text/css">
+
 </head>
 <body>
-	<h3>스카우트 리스트</h3>
-	<table border= "1">
-		<tr>
-			<th>보내는곳</th><th>받는곳</th><th>수락</th><th>거절</th>
-		</tr>
-		<c:forEach var= "m" items= "${requestScope.list}">
-			<tr onclick="openPopup('${m.id}','${m.t_name}')" style="cursor: pointer;">
-				<td>${m.id }</td><td>${m.t_name }</td>
-				<td>
-				<form name= "TeamMessageForm" method= "post" action="${pageContext.request.contextPath}/MsgResponseController?id=${m.id}&t_name=${m.t_name}">
-					<input type="submit" value="수락" > 
-					<input type="hidden" name="response" value="0">
-				</form>
-				</td>
-				<td>
-				<form name= "TeamMessageForm" method= "post" action="${pageContext.request.contextPath}/MsgResponseController?id=${m.id}&t_name=${m.t_name}">
-					<input type="submit" value="거절" > 
-					<input type="hidden" name="response" value="1">
-				</form>
-				</td>
-			</tr>
-		</c:forEach>
-	</table>
+<jsp:include page="/view/home/header.jsp"></jsp:include>
+
+<div id= "back">
+	<div id= "header"></div>
+	<div id = "title"><p><b>스카우트 리스트</b></p></div>
+	<div id="100">
+		<div id= "card">
+			<div id= "content">
+				<div >
+					<table id= "table">
+						<tr id = "headline">
+							<th id= "th">보내는곳</th><th id= "th">받는곳</th><th id= "th">수락</th><th id= "th">거절</th>
+						</tr>
+						<c:forEach var= "m" items= "${requestScope.list}">
+							<tr id = "headline" onclick="openPopup('${m.id}','${m.t_name}')" style="cursor: pointer;">
+								<td id= "th">${m.id }</td><td id= "th">${m.t_name }</td>
+								<td id= "th">
+								<form name= "TeamMessageForm" method= "post" action="${pageContext.request.contextPath}/MsgResponseController?id=${m.id}&t_name=${m.t_name}">
+									<input type="submit" value="수락" > 
+									<input type="hidden" name="response" value="0">
+								</form>
+								</td>
+								<td id= "th">
+								<form name= "TeamMessageForm" method= "post" action="${pageContext.request.contextPath}/MsgResponseController?id=${m.id}&t_name=${m.t_name}">
+									<input type="submit" value="거절" > 
+									<input type="hidden" name="response" value="1">
+								</form>
+								</td>
+							</tr>
+						</c:forEach>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+	
+	
+
+<jsp:include page="/view/home/footer.jsp"></jsp:include>
 </body>
 </html>

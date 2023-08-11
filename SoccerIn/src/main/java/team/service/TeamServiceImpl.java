@@ -46,9 +46,9 @@ public class TeamServiceImpl implements  TeamService{
 	}
 
 	@Override
-	public Team teamInfo(String id) {
+	public Team teamInfo(String t_name) {
 		// TODO Auto-generated method stub
-		return dao.selectTeam(id);
+		return dao.selectTeam(t_name);
 	}
 
 	@Override

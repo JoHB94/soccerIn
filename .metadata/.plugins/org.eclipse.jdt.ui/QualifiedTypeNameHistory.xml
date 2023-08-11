@@ -38,7 +38,6 @@
     <fullyQualifiedTypeName name="player.dao.PlayerDaoImpl"/>
     <fullyQualifiedTypeName name="com.oreilly.servlet.MultipartRequest"/>
     <fullyQualifiedTypeName name="com.oreilly.servlet.multipart.DefaultFileRenamePolicy"/>
-    <fullyQualifiedTypeName name="java.lang.Exception"/>
     <fullyQualifiedTypeName name="java.text.SimpleDateFormat"/>
     <fullyQualifiedTypeName name="java.io.File"/>
     <fullyQualifiedTypeName name="java.sql.Date"/>
@@ -54,10 +53,11 @@
     <fullyQualifiedTypeName name="sign.dao.SignDao"/>
     <fullyQualifiedTypeName name="sign.dao.SignDaoImpl"/>
     <fullyQualifiedTypeName name="team.service.TeamServiceImpl"/>
+    <fullyQualifiedTypeName name="message.model.Message"/>
     <fullyQualifiedTypeName name="java.lang.Integer"/>
-    <fullyQualifiedTypeName name="javax.servlet.http.HttpSession"/>
     <fullyQualifiedTypeName name="message.service.MsgService"/>
     <fullyQualifiedTypeName name="message.service.MsgServiceImpl"/>
-    <fullyQualifiedTypeName name="message.model.Message"/>
+    <fullyQualifiedTypeName name="java.lang.Exception"/>
     <fullyQualifiedTypeName name="javax.servlet.RequestDispatcher"/>
+    <fullyQualifiedTypeName name="javax.servlet.http.HttpSession"/>
 </qualifiedTypeNameHistroy>

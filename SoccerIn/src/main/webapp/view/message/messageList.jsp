@@ -6,9 +6,13 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link href="${pageContext.request.contextPath}/view/message/css/messageListCss.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-	<h3>
+<jsp:include page="/view/home/header.jsp"></jsp:include>
+<div id= "back">
+	<div id= "header"></div>
+	<div id = "title"><p><b>
 		<c:choose>
 			<c:when test="${requestScope.type == 0}">
 				스카우트 리스트
@@ -17,17 +21,18 @@
 				입단 지원 리스트
 			</c:when>
 		</c:choose>
-	</h3>
-	<table border= "1">
-		<tr>
-			<th>구단이름</th><th>선수이름</th>
-		</tr>
-		<c:forEach var= "m" items= "${requestScope.list}">
-			<tr onclick="window.location.href='${pageContext.request.contextPath }/PlayerInfoController?id=${p.id}'" 
-			style="cursor: pointer;">
-				
-			</tr>
-		</c:forEach>
-	</table>
+	</b></p></div>
+	<div id="100">
+		<div id= "card">
+			<div id= "content">
+				<div id= "table">
+					
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+	
 </body>
 </html>

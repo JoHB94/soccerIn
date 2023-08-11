@@ -1,9 +1,0 @@
-package sign.dao;
-
-import sign.model.Sign;
-
-public interface signDao {
-	
-	void insertSign(Sign s);
-	void deleteSign(String id);
-}

@@ -1,5 +1,0 @@
-package sign.dao;
-
-public interface signDao {
-
-}

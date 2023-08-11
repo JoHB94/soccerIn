@@ -41,11 +41,12 @@ public class TeamEditFormController extends HttpServlet {
 		String t_name = request.getParameter("t_name");
 		TeamService service = new TeamServiceImpl();
 		String t_owner = service.getOwner(t_name);
-		Team t = service.teamInfo(id);
+		Team t = service.teamInfo(t_name);
 		
 		if(id.equals(t_owner)) {
 			/*로그인 id가 t_owner의 id일 경우*/
 			request.setAttribute("t", t);
+			System.out.println("로그인 아이디: " + id + t);
 			RequestDispatcher dispatcher = request.getRequestDispatcher("/view/team/teamEdit.jsp");
 			dispatcher.forward(request, response);
 			

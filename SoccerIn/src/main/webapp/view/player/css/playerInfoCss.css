@@ -1,0 +1,77 @@
+@charset "UTF-8";
+
+#pInfo_bg{
+	
+}
+
+#pInfo_header{
+	height: 5rem;
+}
+
+#pInfo_title{
+	font-size:60px;
+	text-align:center;
+}
+
+#pInfo_100con{
+	width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#pInfo_50con{
+	width: 50%;
+    display: flex;
+}
+
+
+#pInfo_card{
+	margin: 0 auto;
+    margin-bottom: 2rem;
+    padding: 3rem;
+    border-radius: 1rem;
+    background-color: white;
+    object-fit: cover;
+    width: 100%;
+    box-shadow: 2px 2px 5px 2px rgba(0, 0, 0, 0.5);
+	
+    
+}
+
+#pInfo_name{
+	width: 100%;
+	text-align: center;
+    font-size: 30px;
+}
+
+#pInfo_card_left{
+	flex:1;
+	margin-left: 1rem;
+    width: 45%;
+}
+
+#pInfo_card_right{
+	flex:1;
+	margin-right: 1rem;
+    width: 45%;
+}
+
+#leftright{
+	
+	width: 100%;
+	display: flex; /* 추가된 부분 */
+  	justify-content: space-between; /* 추가된 부분 */
+}
+
+#pInfo_profile{
+	width: 100%;
+    display: flex;
+}
+
+#pInfo_essential{
+	width:100%;
+}
+
+#pInfo_detail{
+	width:100%;
+}

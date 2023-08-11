@@ -1,11 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>SoccerIn 회원가입</title>
+<title>Insert title here</title>
 <script type="text/javascript">
 	/*check는 비밀번호 확인을 진행했는지 체크하는 변수입니다.*/
 	var check = false;
@@ -54,50 +54,62 @@
 		alert("Id가 중복되었습니다.")
 	}
 </script>
+<link href="${pageContext.request.contextPath}/view/player/css/joinCss.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-	<c:if test="${not empty requestScope.duplication }">
-		<script>
-			dupId();
-		</script>
-	</c:if>
+	<jsp:include page="/view/home/header.jsp"></jsp:include>
+		<div id = "back">
+		<div id= "header"></div>
+		<div id= "title">
+			<p><b>회원가입</b></p>
+		</div>
+		<div id= "100">
+			<div id="join_card">
+				
+				<div id= "content">
+				<form name="JoinForm" method="post"
+					action="${pageContext.request.contextPath }/CheckDuplicatedIdController">
+					<table id= "table" >
+						<tr id = "headline">
+							<th id= "th">ID </th>
+							<td><input type= "text" name= "id"> </td>
+						</tr>
+						<tr id = "headline">
+							<th id= "th">pwd </th>
+							<td><input type= "password" name= "pwd"> </td>
+						</tr>
+						<tr id = "headline">
+							<th id= "th">pwd확인</th>
+							<td><input type="password" name="pwdCheck"></td>
+							<td><input type="button" value="체크" onclick="return checkPwd()"></td>
+						</tr>
+						<tr>
+						
+						</tr>
+						<tr id = "headline">
+							<th id= "th">name</th>
+							<td><input type="text" name="p_name"></td>
+						</tr>
+						<tr id = "headline">
+							<th id= "th">email</th>
+							<td><input type="email" name="p_email"></td>
+						</tr>
+						<tr id = "headline">
+							<th id= "th">address</th>
+							<td><input type="text" name="p_addr"></td>
+						</tr>
+					</table>
+					<hr>
+					<div id= "join_bottom">
+						<input type="button" value="다음" onclick="return checkNull()"> 
+						<input type="reset" value="취소">
+					</div>	
+					
+				</form>
+				</div>
+			</div>
+		</div>
+	</div>
 
-	<h3>회원가입</h3>
-	<form name="JoinForm" method="post"
-		action="${pageContext.request.contextPath }/CheckDuplicatedIdController">
-		<table border="1">
-			<tr>
-				<td>Id</td>
-				<td><input type="text" name="id"></td>
-			</tr>
-			<tr>
-				<td>pwd</td>
-				<td><input type="password" name="pwd"></td>
-			</tr>
-			<tr>
-				<td>pwd확인</td>
-				<td><input type="password" name="pwdCheck"></td>
-				<td><input type="button" value="패스워드 확인" onclick="return checkPwd()"></td>
-			</tr>
-			<tr>
-				<td>name</td>
-				<td><input type="text" name="p_name"></td>
-			</tr>
-			<tr>
-				<td>email</td>
-				<td><input type="email" name="p_email"></td>
-			</tr>
-			<tr>
-				<td>address</td>
-				<td><input type="text" name="p_addr"></td>
-			</tr>
-			<tr>
-				<td colspan="2">
-					<input type="button" value="가입" onclick="return checkNull()"> 
-					<input type="reset" value="취소">
-				</td>
-			</tr>
-		</table>
-	</form>
 </body>
 </html>

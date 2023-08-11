@@ -1,0 +1,46 @@
+@charset "UTF-8";
+#back{
+	display: flex;
+    height: 100vh; /* 화면 전체 높이로 설정 */
+}
+
+#header{
+	height: 5rem;
+}
+
+#left {
+    width: 15%;
+    background-color: lightgray;
+    flex-direction: column;
+  }
+
+  /* 가운데 컬럼 스타일링 */
+  #center {
+    flex: 1; /* 남은 공간을 차지 */
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* 가운데 컬럼 내부 섹션1 스타일링 */
+  #section1 {
+    flex: 1; /* 남은 공간을 차지 */
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    background-image: url('../img/home1.jpg'); /* 이미지 경로 설정 */
+    background-size: cover; /* 이미지를 컨테이너에 맞게 조절 */
+  }
+
+  /* 가운데 컬럼 내부 섹션2 스타일링 */
+  #section2 {
+    background-color: lightblue;
+    height: 100px; /* 높이 조절 */
+    margin: 10px;
+  }
+
+  /* 우측 컬럼 스타일링 */
+  #right {
+    width: 15%;
+    background-color: lightgray;
+    flex-direction: column;
+  }

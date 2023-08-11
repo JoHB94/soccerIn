@@ -1,6 +1,0 @@
-package message.service;
-
-public interface MsgService {
-	
-	
-}
